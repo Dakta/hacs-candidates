@@ -1,0 +1,427 @@
+/*
+Theme Name: HackTheTruth Candidates
+Theme URI: http://hackthetruth.org/wordpress/candidates
+Author: Dakota Schneider
+Author URI: http://hackthetruth.org/
+Description: The custom WordPress theme for Halle Russle's US Presidential Candidates website.
+Version: 1.0
+License: None. Do not distribute.
+License URI: N/A
+Tags: none
+Text Domain: twentythirteen
+
+This theme is not licensed for distribution. If you find a copy, please contact Dakota Schneider (dakota@hackthetruth.org).
+*/
+
+
+/* @import url("./css/normalize.css"); /* clean up appearance across browsers */
+/* @import url("./css/boilerplate-base.css"); /* basic styles from HTML5 Boilerplate */
+/* @import url("./css/typography.css"); /* typographic niceties */
+
+/* @import url("./css/main.css"); /* primary site design, layout, etc. */
+
+/* @import url("./css/boilerplate-helpers.css"); /* basic print styling cleanup, clearfixes, etc. from HTML5 Boilerplate */
+
+
+/* Merriweather from Google Fonts
+ *
+ * font-family: 'Merriweather', serif;
+ *
+ */
+
+/* @import url("./skeleton.css"); */
+
+
+html {
+    font-family: 'Merriweather', serif;
+    line-height: 2;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+a {
+    text-decoration: none;
+    color: royalblue;
+}
+
+a:visited {
+    color: orangered;
+}
+
+h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   Structural & Layout: Full-width headers and footers.
+   ========================================================================== */
+/* Superceded by skeleton.css -> .container
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+*/
+
+
+/*
+ * Behind-the-page footer layer structure
+ */
+
+body {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#page-container,
+body > footer { width: 100%; }
+
+#page-container {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+body > footer {
+    position: absolute;
+    z-index: -20;
+    width: 100%;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 140px;
+}
+
+    body > footer > .container {
+        padding-bottom: 1rem;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: -15;
+    }
+    
+@media only screen and (max-width: 767px) {
+    body > footer {
+        height: 300px;
+    }
+}
+
+
+/*
+ * Page aesthetic (colors, textures, shadows, etc.)
+ */
+#page-container {
+    background-color: #eee;
+    box-shadow: 0px -1px 10px black;
+    padding-top: 1rem;
+}
+
+body > footer {
+    background-color: #222;
+    color: #ccc;
+}
+
+body > footer h1 {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+
+
+/*
+ * Header & Navigation
+ */
+#page-container > header {
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+#page-container > header nav {
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+}
+
+#page-container > header nav ul {
+    list-style: none;
+    margin: 0 0 0 -1.2em;
+    padding: 0;
+    float: left;
+}
+
+#page-container > header nav ul li {
+    display: block;
+    float: left;
+    text-align: center;
+    border-right: 1px dashed #ddd;
+}
+#page-container > header nav ul li:last-child {
+    border: none;
+}
+
+#page-container > header nav ul li a {
+    display: block;
+    margin: 0;
+    padding: 0.5em 1.2em;
+    color: inherit;
+    text-decoration: none;
+
+    /* declare border color and width here once so it's inherited multiple times below */
+    border-color: tomato;
+    border-width: 1px;
+}
+
+    #page-container > header nav ul li a:hover,
+    #page-container > header nav ul li a:active { margin-bottom: -1px; }
+    #page-container > header nav ul li a:focus  { margin: -1px; }
+    
+    #page-container > header nav ul li a:hover  { border-bottom-style: dotted; }
+    #page-container > header nav ul li a:active { border-bottom-style: dashed; }
+    #page-container > header nav ul li a:focus  { border-style: dotted; }
+
+#page-container > header nav ul li.current-menu-item a {
+    border-bottom-style: solid;
+    margin-bottom: -1px;
+}
+  
+/*
+    #page-container > header nav ul li a:hover { border-bottom: 1px dotted tomato; }
+    #page-container > header nav ul li a:active { border-bottom: 1px dashed tomato; }
+    #page-container > header nav ul li a:focus { border: 1px dotted tomato; }
+
+#page-container > header nav ul li a.active {
+    border-bottom: 1px solid tomato;
+}
+*/
+
+
+/*
+ * Footer (navigation and meta)
+ */
+body > footer {
+    color: #aaa;
+    line-height: 1.5;
+    border-top: 1px solid #ddd;
+    font-size: 0.8rem;
+    padding-bottom: 2rem;
+}
+
+body > footer .copyright h1 {
+    display: none;
+}
+
+body > footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+body > footer a:hover {
+    color: #eee;
+}
+
+body > footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+body > footer ul li {
+    list-style-type: none;
+}
+/* Don't collapse the footer columns in landscape on phones */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    body > footer {
+        height: 140px;
+    }
+    body > footer .container .three.columns {
+        width: 133px;
+        float: left;
+        display: inline;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+/*
+ * Text Formatting
+ */
+
+/* Extra padding on paragraph sides for mobile */
+p {
+/*
+    padding-left: 1em;
+    padding-right: 1em;
+*/
+}
+/* remove extra padding for mobile (phones, not tablets) in portrait */
+@media only screen and (max-width: 767px) {
+/*
+    p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+*/
+}
+
+
+/* Image Formatting */
+
+img {
+    margin-bottom: 1.5em;
+}
+img + img {
+    margin-top: -1.5em;
+}
+
+img.full {
+    width: 100%;
+    clear: both;
+}
+
+img.full.bleed {
+    width: 133%;
+    margin-left: -16.5%;
+}
+
+img.float.left,
+img.float.left.quarter,
+img.float.left.third,
+img.float.left.half {
+    float: left;
+    margin-right: 1em;
+}
+img.float.right,
+img.float.right.quarter,
+img.float.right.third,
+img.float.right.half {
+    float: right;
+    margin-left: 1em;
+}
+
+img.float.left,
+img.float.right         { width: 44%; }
+
+img.float.left.quarter,
+img.float.right.quarter { width: 25%; }
+
+img.float.left.third,
+img.float.right.third   { width: 33%; }
+
+img.float.left.half,
+img.float.right.half    { width: 50%; }
+
+/* Oh, how I wish we could do this... But :before and :after are not supported on replaced elements.
+img[title]:after {
+    content: attr(title);
+}
+*/
+
+
+
+
+/*
+ * Candidates
+ */
+
+.candidates {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.candidates .candidate {
+    border-bottom: 1px solid #ccc;
+    margin: 0.667em auto;
+    padding: 0;
+}
+.candidates .candidate:last-child {
+    border-bottom: none;
+}
+
+.candidate header h1 {
+    display: inline-block;
+    font-size: 1.0rem;
+}
+.candidate header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.candidate header span {
+    margin-left: 1em;
+}
+
+.candidate header .edit-link {
+    float: right;
+    color: #666;
+}
+.candidate header .edit-link:hover {
+    color: #000;
+}
+
+.candidates .candidate img {
+    margin: 0;
+}
+
+.candidates .candidate blockquote {
+    font-style: inherit;
+    margin: 0;
+    
+}
+.candidates .candidate blockquote:before {
+    display: none;
+    content: "";
+}
+
+.candidates .candidate blockquote p {
+    display: inline; /* so the "Read more..." link doesn't get pushed to a new line */
+}
+
+
+.candidate .party { font-weight: 600; }
+
+
+/* Colors */
+/* UNUSED: Replaced by Advanced Custom Fields plugin and inline styles */
+/*
+.democratic.party  { color: royalblue; }
+.republican.party  { color: orangered; }
+.green.party       { color: forestgreen; }
+.libertarian.party { color: darkgoldenrod; }
+
+.example.party { color: pink; }
+*/
+
+/* Status */
+.status { color: inherit; }
+
+
+
+
+
+/* Grid */
+#grid .column,
+#grid .columns {
+	background: #ddd;
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #555;
+	font-size: 12px;
+	font-weight: bold;
+	-moz-border-radius: 2px;
+	 -webkit-border-radius: 2px;
+	 border-radius: 2px; }
+#grid .column:hover,
+#grid .columns:hover {
+	background: #bbb;
+	color: #333; }
+#grid { overflow: hidden; }
